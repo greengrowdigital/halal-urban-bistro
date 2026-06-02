@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>THE HUB — The Halal Urban Bistro · Queens, NY</title>
+<meta name="description" content="Premium halal smash burgers, chopped cheese, and the original Maple Smash. Zabiha halal. Farm to table. Open 5pm – 2am, Tuesday through Sunday. 235-20 Hillside Ave, Queens, NY."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..150,0..1&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314110d'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' font-family='Bebas Neue, Impact, sans-serif' font-size='34' fill='%23c0392b' font-weight='700'%3EH%3C/text%3E%3C/svg%3E"/>
+<style>
+:root{
+  --paper:#f5ede1;
+  --paper-2:#ece2d2;
+  --ink:#14110d;
+  --ink-2:#3a322a;
+  --sauce:#c0392b;
+  --sauce-deep:#8e1f17;
+  --char:#b88436;
+  --halal:#2d5a3d;
+  --line:rgba(20,17,13,.14);
+  --line-2:rgba(20,17,13,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(192,57,43,.08), transparent 60%),
+    radial-gradient(900px 500px at 92% 110%, rgba(184,132,54,.12), transparent 60%),
+    var(--paper);
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:1380px;margin:0 auto;padding:0 36px}
+@media (max-width:680px){.wrap{padding:0 22px}}
+
+/* ============ GRAIN OVERLAY ============ */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.18;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:18px 0;backdrop-filter:blur(12px);
+  background:rgba(245,237,225,.78);
+  border-bottom:1px solid var(--line);
+  transition:padding .3s ease;
+}
+.nav.scrolled{padding:12px 0;background:rgba(245,237,225,.94)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.08em;font-size:24px;color:var(--ink)}
+.brand-mark{
+  width:38px;height:38px;border-radius:8px;background:var(--ink);
+  display:grid;place-items:center;color:var(--sauce);font-size:22px;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:0;
+  position:relative;overflow:hidden;
+}
+.brand-mark::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg, transparent 60%, rgba(184,132,54,.4));
+}
+.brand-text{display:flex;flex-direction:column;line-height:.9}
+.brand-text small{font-family:'Fraunces',serif;font-size:10px;font-style:italic;letter-spacing:.04em;color:var(--ink-2);text-transform:none}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.nav-links a{position:relative;padding:6px 0;color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{
+  background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:14px;
+  display:inline-flex;align-items:center;gap:8px;transition:all .3s ease;
+}
+.nav-cta:hover{background:var(--sauce);transform:translateY(-1px)}
+.nav-cta::after{display:none !important}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(245,237,225,.8);display:none;align-items:center;justify-content:center}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:var(--ink)}
+.nav-toggle span::before{top:-5px}
+.nav-toggle span::after{top:5px}
+@media (max-width:920px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);padding:24px;gap:20px;border-bottom:1px solid var(--line);align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:inline-flex}
+}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;padding:140px 0 60px;
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+@media (max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero{padding-top:120px}}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.18em;color:var(--sauce);
+  padding:6px 0;border-top:1px solid var(--sauce);border-bottom:1px solid var(--sauce);
+  align-self:flex-start;
+}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--sauce);border-radius:50%;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.5}}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-weight:600;font-size:clamp(48px,8vw,128px);
+  line-height:.88;letter-spacing:-.025em;
+  margin-top:24px;
+  font-variation-settings:"SOFT" 20,"WONK" 0;
+}
+.hero h1 .it{font-style:italic;color:var(--sauce);font-variation-settings:"SOFT" 80,"WONK" 1}
+.hero h1 .small{font-family:'Bebas Neue',sans-serif;display:block;font-size:.35em;letter-spacing:.06em;color:var(--ink-2);line-height:1;margin-top:18px;font-weight:400}
+
+.hero-sub{
+  font-family:'Fraunces',serif;font-size:clamp(18px,1.6vw,22px);
+  color:var(--ink-2);line-height:1.45;margin-top:28px;max-width:520px;
+}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);
+}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-item .k{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.12em;color:var(--ink-2)}
+.meta-item .v{font-family:'Fraunces',serif;font-size:18px;color:var(--ink);font-weight:600}
+.meta-item .v.green{color:var(--halal)}
+.meta-item .v.dot::before{content:"●";color:#1f9b4e;margin-right:6px;font-size:14px}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 26px;border-radius:999px;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:15px;
+  transition:all .35s cubic-bezier(.2,.7,.2,1);
+  position:relative;overflow:hidden;
+}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--sauce);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:16px;height:16px}
+
+/* Hero image */
+.hero-art{position:relative;aspect-ratio:1/1;max-width:580px;margin-left:auto}
+.hero-art-img{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:0 30px 80px -20px rgba(20,17,13,.4)}
+.hero-art-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 12s ease}
+.hero-art:hover .hero-art-img img{transform:scale(1.15)}
+.hero-art-ring{
+  position:absolute;inset:-30px;border-radius:50%;border:1px dashed var(--ink);opacity:.3;
+  animation:rotate 60s linear infinite;
+}
+.hero-art-ring::before,.hero-art-ring::after{
+  content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--sauce);
+  left:50%;transform:translateX(-50%);
+}
+.hero-art-ring::before{top:-7px}
+.hero-art-ring::after{bottom:-7px;background:var(--char)}
+@keyframes rotate{to{transform:rotate(360deg)}}
+
+.hero-badge{
+  position:absolute;top:-10px;right:-10px;
+  width:130px;height:130px;border-radius:50%;background:var(--sauce);color:var(--paper);
+  display:grid;place-items:center;text-align:center;
+  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.06em;line-height:1.1;
+  box-shadow:0 8px 30px rgba(192,57,43,.4);
+  animation:spin 18s linear infinite;
+}
+.hero-badge span{display:block;font-size:34px;line-height:1;margin-top:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Halal stamp */
+.halal-stamp{
+  position:absolute;bottom:20px;left:20px;
+  background:var(--paper);border:2px solid var(--halal);color:var(--halal);
+  padding:8px 16px;border-radius:6px;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.16em;font-size:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+  transform:rotate(-4deg);
+}
+.halal-stamp::before{content:"✓ ";color:var(--halal)}
+
+/* ============ MARQUEE STRIP ============ */
+.marquee{
+  position:relative;background:var(--ink);color:var(--paper);
+  padding:18px 0;overflow:hidden;
+  border-top:3px solid var(--sauce);border-bottom:3px solid var(--sauce);
+}
+.marquee-track{display:flex;gap:60px;white-space:nowrap;animation:marqueeScroll 32s linear infinite}
+.marquee-track span{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.14em;
+  display:flex;align-items:center;gap:60px;
+}
+.marquee-track i{color:var(--sauce);font-style:normal}
+@keyframes marqueeScroll{to{transform:translateX(-50%)}}
+
+/* ============ SIGNATURE SECTION ============ */
+section{padding:120px 0;position:relative;z-index:2}
+@media (max-width:680px){section{padding:80px 0}}
+
+.section-head{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:end;margin-bottom:64px}
+@media (max-width:900px){.section-head{grid-template-columns:1fr;gap:24px}}
+
+.section-title{
+  font-family:'Fraunces',serif;font-size:clamp(40px,5vw,84px);
+  line-height:.9;letter-spacing:-.02em;color:var(--ink);
+}
+.section-title .it{font-style:italic;color:var(--sauce)}
+.section-lede{font-family:'Fraunces',serif;font-size:20px;color:var(--ink-2);line-height:1.5}
+
+.sigs{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media (max-width:960px){.sigs{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.sigs{grid-template-columns:1fr}}
+
+.sig{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .5s ease, box-shadow .5s ease;
+  position:relative;
+}
+.sig:hover{transform:translateY(-8px);box-shadow:0 30px 60px -20px rgba(20,17,13,.3)}
+.sig-img{aspect-ratio:5/4;overflow:hidden;position:relative}
+.sig-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.sig:hover .sig-img img{transform:scale(1.06)}
+.sig-tag{
+  position:absolute;top:14px;left:14px;
+  background:var(--paper);color:var(--ink);padding:6px 12px;border-radius:999px;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:12px;
+}
+.sig-tag.hot{background:var(--sauce);color:var(--paper)}
+.sig-tag.new{background:var(--halal);color:var(--paper)}
+.sig-body{padding:28px 26px 26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.sig-name{font-family:'Fraunces',serif;font-size:30px;line-height:1.05;color:var(--ink);font-weight:600}
+.sig-name .it{font-style:italic;color:var(--sauce)}
+.sig-desc{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.sig-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line)}
+.sig-price{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--ink);letter-spacing:.04em}
+.sig-cta{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.1em;color:var(--sauce);display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.sig:hover .sig-cta{gap:12px}
+
+/* ============ STORY SNIPPET ============ */
+.story{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.story::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(800px 400px at 20% 10%, rgba(192,57,43,.18), transparent 60%),
+    radial-gradient(600px 400px at 90% 90%, rgba(184,132,54,.15), transparent 60%);
+}
+.story .wrap{position:relative}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+@media (max-width:960px){.story-grid{grid-template-columns:1fr;gap:48px}}
+.story-img{aspect-ratio:4/5;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story-eyebrow{font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;color:var(--char);font-size:13px;padding:6px 0;border-top:1px solid var(--char);border-bottom:1px solid var(--char);display:inline-block;align-self:flex-start}
+.story h2{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,80px);line-height:.92;letter-spacing:-.02em;margin-top:24px}
+.story h2 .it{font-style:italic;color:var(--char)}
+.story p{font-family:'Fraunces',serif;font-size:21px;line-height:1.55;color:rgba(245,237,225,.85);margin-top:24px}
+.story .btn-line{border-color:var(--paper);color:var(--paper);margin-top:32px}
+.story .btn-line:hover{background:var(--paper);color:var(--ink)}
+
+/* tiny float photos */
+.story-floats{position:absolute;inset:0;pointer-events:none}
+.story-floats .f{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:.9}
+.story-floats .f1{top:8%;right:6%;width:160px;height:200px;transform:rotate(7deg)}
+.story-floats .f2{bottom:10%;right:18%;width:130px;height:130px;transform:rotate(-9deg);border-radius:50%}
+.story-floats .f img{width:100%;height:100%;object-fit:cover}
+@media (max-width:1100px){.story-floats{display:none}}
+
+/* ============ REVIEWS ============ */
+.reviews .section-head{margin-bottom:48px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:960px){.review-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.review-grid{grid-template-columns:1fr}}
+
+.review{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:32px 28px;display:flex;flex-direction:column;gap:18px;
+  position:relative;transition:transform .4s ease, border-color .4s ease;
+}
+.review:hover{transform:translateY(-6px);border-color:var(--ink)}
+.review-stars{color:var(--char);font-size:18px;letter-spacing:.15em}
+.review-quote{font-family:'Fraunces',serif;font-size:18px;line-height:1.55;color:var(--ink);font-weight:500}
+.review-quote .small{font-size:14px;color:var(--ink-2);display:block;margin-top:8px;font-style:italic}
+.review-foot{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
+.review-avatar{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em}
+.review-meta{display:flex;flex-direction:column;line-height:1.2}
+.review-name{font-weight:600;font-size:14px;color:var(--ink)}
+.review-when{font-size:12px;color:var(--ink-2)}
+.review .gquote{position:absolute;top:14px;right:18px;font-family:'Fraunces',serif;font-size:90px;color:var(--sauce);opacity:.1;line-height:1}
+
+/* ============ LOCATIONS PREVIEW ============ */
+.locs{background:var(--paper-2)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+@media (max-width:900px){.loc-grid{grid-template-columns:1fr}}
+.loc-card{background:var(--paper);border-radius:24px;overflow:hidden;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1.2fr;min-height:280px}
+@media (max-width:640px){.loc-card{grid-template-columns:1fr}}
+.loc-img{position:relative;overflow:hidden;min-height:200px}
+.loc-img img{width:100%;height:100%;object-fit:cover}
+.loc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,rgba(20,17,13,.4))}
+.loc-body{padding:30px 28px;display:flex;flex-direction:column}
+.loc-kind{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--sauce);margin-bottom:10px}
+.loc-title{font-family:'Fraunces',serif;font-size:30px;line-height:1.05;color:var(--ink);font-weight:600;margin-bottom:14px}
+.loc-addr{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin-bottom:18px}
+.loc-hours{font-size:13px;color:var(--ink);padding:10px 14px;background:var(--paper-2);border-radius:10px;display:inline-block;font-family:'Bebas Neue',sans-serif;letter-spacing:.06em;margin-bottom:18px}
+.loc-cta{margin-top:auto;display:flex;gap:12px}
+.loc-cta a{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.1em;padding:10px 16px;border-radius:999px;border:1px solid var(--ink);transition:all .3s}
+.loc-cta a:hover{background:var(--ink);color:var(--paper)}
+
+/* ============ CTA BAND ============ */
+.cta-band{
+  background:var(--sauce);color:var(--paper);position:relative;overflow:hidden;
+  padding:80px 0;
+}
+.cta-band::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 300px at 90% 50%, rgba(184,132,54,.3), transparent),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .9 0 0 0 0 .85 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.6;
+}
+.cta-band .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta-band h3{font-family:'Fraunces',serif;font-size:clamp(36px,4.5vw,64px);line-height:.95;letter-spacing:-.02em;max-width:680px}
+.cta-band h3 .it{font-style:italic}
+.cta-band .btn{background:var(--ink);color:var(--paper);font-size:16px;padding:18px 30px}
+.cta-band .btn:hover{background:var(--paper);color:var(--ink)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:var(--paper);padding:80px 0 36px;position:relative;z-index:2}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand{font-family:'Fraunces',serif;font-size:42px;line-height:.95;letter-spacing:-.02em;font-weight:600}
+.foot-brand .it{font-style:italic;color:var(--char)}
+.foot-brand small{display:block;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.12em;color:rgba(245,237,225,.6);margin-top:14px}
+.foot-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--char);margin-bottom:18px}
+.foot-h{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;margin-bottom:18px;color:var(--char)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{font-size:14px;color:rgba(245,237,225,.78);transition:color .25s}
+footer ul a:hover{color:var(--paper)}
+.foot-bottom{padding-top:28px;border-top:1px solid rgba(245,237,225,.12);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot-bottom small{font-size:12px;color:rgba(245,237,225,.5);letter-spacing:.04em}
+.foot-soc{display:flex;gap:10px}
+.foot-soc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,237,225,.2);display:grid;place-items:center;transition:all .3s}
+.foot-soc a:hover{background:var(--sauce);border-color:var(--sauce)}
+.foot-soc svg{width:16px;height:16px;color:var(--paper)}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.stagger > *{opacity:0;transform:translateY(40px);transition:opacity .8s, transform .8s}
+.stagger.in > *{opacity:1;transform:translateY(0)}
+.stagger.in > *:nth-child(2){transition-delay:.1s}
+.stagger.in > *:nth-child(3){transition-delay:.2s}
+.stagger.in > *:nth-child(4){transition-delay:.3s}
+.stagger.in > *:nth-child(5){transition-delay:.4s}
+.stagger.in > *:nth-child(6){transition-delay:.5s}
+
+/* ============ PAGE LOADER ============ */
+.loader{position:fixed;inset:0;background:var(--ink);z-index:200;display:grid;place-items:center;transition:opacity .8s, visibility .8s;color:var(--paper)}
+.loader.gone{opacity:0;visibility:hidden}
+.loader-text{font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:18px;color:var(--sauce);position:relative;overflow:hidden}
+.loader-text::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;background:var(--sauce);width:100%;animation:loadBar 1.4s ease forwards}
+@keyframes loadBar{from{width:0}to{width:100%}}
+
+/* scroll progress */
+.scroll-prog{position:fixed;top:0;left:0;height:3px;background:var(--sauce);width:0;z-index:60;transition:width .1s}
+
+@media (max-width:680px){
+  .hero{padding-top:110px}
+  .hero h1{font-size:clamp(40px,12vw,68px)}
+  .hero-art{margin:0 auto}
+  .hero-badge{width:100px;height:100px;font-size:11px}
+  .hero-badge span{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader"><div class="loader-text">THE HUB · LOADING</div></div>
+<div class="scroll-prog" id="prog"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">H</span>
+      <span class="brand-text">THE HUB<small>The Halal Urban Bistro</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Story</a>
+      <a href="locations.html">Locations</a>
+      <a href="order.html" class="nav-cta">Order Online <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Queens, NY · Est. 2023</span>
+      <h1 class="reveal">
+        Halal smash<br>
+        burgers<span class="it">,</span><br>
+        cooked <span class="it">honest.</span>
+        <span class="small">aka THE HUB · Zabiha Halal · Farm to Table</span>
+      </h1>
+      <p class="hero-sub reveal">
+        We grind premium beef every morning. Smash it on a hot griddle. Stack it on a buttered bun.
+        No frozen patties, no shortcuts — just <strong>real halal burgers</strong> that taste like
+        someone's dad made them. Because they kind of are.
+      </p>
+      <div class="hero-meta reveal">
+        <div class="meta-item">
+          <span class="k">Open Tonight</span>
+          <span class="v dot">5pm – 2am</span>
+        </div>
+        <div class="meta-item">
+          <span class="k">Certification</span>
+          <span class="v green">Zabiha Halal ✓</span>
+        </div>
+        <div class="meta-item">
+          <span class="k">Rating</span>
+          <span class="v">4.9 ★ · 380+ reviews</span>
+        </div>
+      </div>
+      <div class="hero-cta reveal">
+        <a href="order.html" class="btn btn-primary">Order Pickup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="menu.html" class="btn btn-line">See the menu</a>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="hero-art-ring"></div>
+      <div class="hero-art-img">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=85" alt="THE HUB smash burger"/>
+      </div>
+      <div class="hero-badge"><div>Original<span>Maple</span>Smash</div></div>
+      <div class="halal-stamp">Zabiha Halal</div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>SMASHED FRESH DAILY <i>★</i></span>
+    <span>ZABIHA HALAL <i>★</i></span>
+    <span>FARM TO TABLE <i>★</i></span>
+    <span>OPEN 5PM – 2AM <i>★</i></span>
+    <span>QUEENS · NY <i>★</i></span>
+    <span>SMASHED FRESH DAILY <i>★</i></span>
+    <span>ZABIHA HALAL <i>★</i></span>
+    <span>FARM TO TABLE <i>★</i></span>
+    <span>OPEN 5PM – 2AM <i>★</i></span>
+    <span>QUEENS · NY <i>★</i></span>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<section class="signatures">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">The Lineup</span>
+        <h2 class="section-title">Three burgers, one <span class="it">obsession.</span></h2>
+      </div>
+      <p class="section-lede reveal">The smashburger started as a corner-store hustle. Then we put a fried egg on it, drizzled it with maple syrup, and the line out the door has been pretty steady ever since.</p>
+    </div>
+
+    <div class="sigs stagger">
+      <article class="sig">
+        <div class="sig-img">
+          <span class="sig-tag hot">Most Ordered</span>
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85" alt="Smash burger"/>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-name">The <span class="it">Smashed</span> Burger</h3>
+          <p class="sig-desc">Premium halal beef, smashed thin on a 600° flat-top until the edges turn that perfect lacy crisp. American cheese, grilled onions, THE HUB sauce. Beef or chicken.</p>
+          <div class="sig-foot">
+            <span class="sig-price">$10</span>
+            <a href="order.html" class="sig-cta">Add to order →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sig">
+        <div class="sig-img">
+          <span class="sig-tag new">Signature</span>
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=85" alt="Maple Smash"/>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-name">The <span class="it">Maple</span> Smash</h3>
+          <p class="sig-desc">The one that broke the internet. Smashed beef patty, melted cheese, sunny egg, organic maple syrup, all served on a buttered croissant. Sweet-savory in the best way.</p>
+          <div class="sig-foot">
+            <span class="sig-price">$12</span>
+            <a href="order.html" class="sig-cta">Add to order →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sig">
+        <div class="sig-img">
+          <span class="sig-tag">House Special</span>
+          <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=85" alt="Loaded Fries"/>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-name">The <span class="it">Loaded</span> Fries</h3>
+          <p class="sig-desc">Hand-cut fries piled with chopped premium beef or chicken, melted cheese, grilled onions, and THE HUB sauce. Designed to be shared. Often isn't.</p>
+          <div class="sig-foot">
+            <span class="sig-price">$8</span>
+            <a href="order.html" class="sig-cta">Add to order →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="reveal" style="margin-top:48px;text-align:center">
+      <a href="menu.html" class="btn btn-line">Browse full menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-img reveal">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85" alt="THE HUB kitchen"/>
+      </div>
+      <div>
+        <span class="story-eyebrow reveal">Our Story</span>
+        <h2 class="reveal">A burger spot built on <span class="it">Dad's recipes.</span></h2>
+        <p class="reveal">The Halal Urban Bistro started with Dad's spice blend — the one he used to make scrambled eggs on weekends. We put it on a smashburger, then on a croissant, then on a paratha. Somewhere between the food truck and the brick-and-mortar, a neighborhood found its spot.</p>
+        <p class="reveal">Every patty is hand-formed. Every order is made when you walk up. We're closed Mondays because rest matters, and we'll never be the cheapest — only the most honest.</p>
+        <a href="story.html" class="btn btn-line reveal">Read the full story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="story-floats">
+    <div class="f f1"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=85" alt=""/></div>
+    <div class="f f2"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=400&q=85" alt=""/></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">Word of Mouth</span>
+        <h2 class="section-title">What the <span class="it">block</span> says.</h2>
+      </div>
+      <p class="section-lede reveal">380+ five-star reviews on Google. The kindest people drive in from Long Island and Brooklyn for one burger. That's the part that still gets us.</p>
+    </div>
+
+    <div class="review-grid stagger">
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">WOWWW!!!! This has to be the best burger spot I've ever tried and the fact that it's halal makes it even better. My husband brought me here first and I had to bring my whole family.</p>
+        <div class="review-foot">
+          <div class="review-avatar">M</div>
+          <div class="review-meta">
+            <span class="review-name">Mina Lima</span>
+            <span class="review-when">Google · 8 months ago</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Honestly this has to be some of the best burgers I've had in NYC. The whole menu was so delicious! I love the Smashed Maple and the loaded fries.<span class="small">Rate this food 10/10.</span></p>
+        <div class="review-foot">
+          <div class="review-avatar">T</div>
+          <div class="review-meta">
+            <span class="review-name">Timothy R.</span>
+            <span class="review-when">Local Guide · 4 months ago</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Amazing food and amazing service. A must stop if you're in town. Insanely cheap for a high quality burger. Farrukh really cares about his customers. <span class="small">Best halal smashburgers in NYC hands down.</span></p>
+        <div class="review-foot">
+          <div class="review-avatar">B</div>
+          <div class="review-meta">
+            <span class="review-name">Batul A.M.</span>
+            <span class="review-when">Local Guide · 1 year ago</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">The HUB is truly one of the best halal smash burgers I have ever had in New York. Their fries with the specialty sauce is the cherry on top.</p>
+        <div class="review-foot">
+          <div class="review-avatar">M</div>
+          <div class="review-meta">
+            <span class="review-name">Mahdeer R.</span>
+            <span class="review-when">Google · 1 year ago</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Absolutely incredible. The burger was perfectly cooked, juicy, and packed with flavor. The bun was soft but held together like a champ. Toppings fresh and balanced.</p>
+        <div class="review-foot">
+          <div class="review-avatar">J</div>
+          <div class="review-meta">
+            <span class="review-name">Justin Salazar</span>
+            <span class="review-when">Google · 11 months ago</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="gquote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Halal Urban Bistro is easily one of the best halal spots around. Their smash burgers are absolutely incredible — juicy, flavorful, cooked to perfection. The staff are super friendly.</p>
+        <div class="review-foot">
+          <div class="review-avatar">U</div>
+          <div class="review-meta">
+            <span class="review-name">Umut Bozyel</span>
+            <span class="review-when">Google · 7 months ago</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS PREVIEW -->
+<section class="locs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">Find Us</span>
+        <h2 class="section-title">Two corners of <span class="it">New York.</span></h2>
+      </div>
+      <p class="section-lede reveal">The flagship on Hillside Ave is open Tuesday through Sunday, 5pm to 2am. The Union Square Holiday Market booth runs late November through Christmas Eve.</p>
+    </div>
+
+    <div class="loc-grid stagger">
+      <article class="loc-card">
+        <div class="loc-img">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=85" alt="Hillside Ave"/>
+        </div>
+        <div class="loc-body">
+          <span class="loc-kind">Flagship</span>
+          <h3 class="loc-title">The Hillside <span style="font-style:italic;color:var(--sauce)">flagship.</span></h3>
+          <p class="loc-addr">235-20 Hillside Ave<br>Queens Village, NY 11427</p>
+          <span class="loc-hours">TUES–SUN · 5PM–2AM</span>
+          <div class="loc-cta">
+            <a href="locations.html">Directions →</a>
+            <a href="tel:+19173327100">Call</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="loc-card">
+        <div class="loc-img">
+          <img src="https://images.unsplash.com/photo-1513875528452-d4194b03133f?auto=format&fit=crop&w=700&q=85" alt="Union Square booth"/>
+        </div>
+        <div class="loc-body">
+          <span class="loc-kind">Seasonal</span>
+          <h3 class="loc-title">The Union Square <span style="font-style:italic;color:var(--sauce)">booth.</span></h3>
+          <p class="loc-addr">Union Square Holiday Market<br>14th St &amp; Broadway, Manhattan</p>
+          <span class="loc-hours">LATE NOV – DEC 24 · 11AM–8PM</span>
+          <div class="loc-cta">
+            <a href="locations.html">Map →</a>
+            <a href="locations.html">Schedule</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" style="padding:80px 0">
+  <div class="wrap">
+    <h3>Hungry now? We're <span class="it">already smashing.</span></h3>
+    <a href="order.html" class="btn">Order pickup <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-tag">The Halal Urban Bistro</span>
+        <div class="foot-brand">THE <span class="it">HUB.</span><small>Queens, NY · Est. 2023</small></div>
+      </div>
+      <div>
+        <h4 class="foot-h">Visit</h4>
+        <ul>
+          <li>235-20 Hillside Ave</li>
+          <li>Queens Village, NY 11427</li>
+          <li><a href="tel:+19173327100">(917) 332-7100</a></li>
+          <li><a href="mailto:hello@thehub.nyc">hello@thehub.nyc</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="foot-h">Hours</h4>
+        <ul>
+          <li>Mon — Closed</li>
+          <li>Tue – Sun — 5pm to 2am</li>
+          <li>Ramadan — extended hours</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="foot-h">Explore</h4>
+        <ul>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="order.html">Order Online</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>© 2026 The Halal Urban Bistro. All rights reserved. Zabiha halal certified.</small>
+      <div class="foot-soc">
+        <a href="https://instagram.com/thehalalurbanbistro" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://google.com/maps" aria-label="Google Maps" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('gone'),700);
+});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+  const sc=document.documentElement;
+  const max=sc.scrollHeight-sc.clientHeight;
+  document.getElementById('prog').style.width=(window.scrollY/max*100)+'%';
+});
+
+// Nav toggle (mobile)
+document.getElementById('navToggle').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Reveal animation
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

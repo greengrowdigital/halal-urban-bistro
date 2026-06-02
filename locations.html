@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Locations — THE HUB · Queens Village &amp; Union Square</title>
+<meta name="description" content="Visit THE HUB at 235-20 Hillside Ave in Queens Village, NY — open Tuesday through Sunday, 5pm to 2am. Plus our seasonal booth at Union Square Holiday Market."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..150,0..1&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314110d'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' font-family='Bebas Neue, Impact, sans-serif' font-size='34' fill='%23c0392b' font-weight='700'%3EH%3C/text%3E%3C/svg%3E"/>
+<style>
+:root{--paper:#f5ede1;--paper-2:#ece2d2;--ink:#14110d;--ink-2:#3a322a;--sauce:#c0392b;--char:#b88436;--halal:#2d5a3d;--line:rgba(20,17,13,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:radial-gradient(1200px 600px at 12% -10%,rgba(192,57,43,.08),transparent 60%),radial-gradient(900px 500px at 92% 110%,rgba(184,132,54,.12),transparent 60%),var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:1380px;margin:0 auto;padding:0 36px}
+@media (max-width:680px){.wrap{padding:0 22px}}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV (shared) */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;backdrop-filter:blur(12px);background:rgba(245,237,225,.78);border-bottom:1px solid var(--line);transition:padding .3s}
+.nav.scrolled{padding:12px 0;background:rgba(245,237,225,.94)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Bebas Neue',sans-serif;letter-spacing:.08em;font-size:24px}
+.brand-mark{width:38px;height:38px;border-radius:8px;background:var(--ink);display:grid;place-items:center;color:var(--sauce);font-size:22px;position:relative;overflow:hidden}
+.brand-mark::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(184,132,54,.4))}
+.brand-text{display:flex;flex-direction:column;line-height:.9}
+.brand-text small{font-family:'Fraunces',serif;font-size:10px;font-style:italic;letter-spacing:.04em;color:var(--ink-2);text-transform:none}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.nav-links a{position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.nav-cta:hover{background:var(--sauce);transform:translateY(-1px)}
+.nav-cta::after{display:none !important}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(245,237,225,.8);align-items:center;justify-content:center}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:var(--ink)}
+.nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
+@media (max-width:920px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);padding:24px;gap:20px;align-items:flex-start;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-toggle{display:inline-flex}}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.18em;color:var(--sauce);padding:6px 0;border-top:1px solid var(--sauce);border-bottom:1px solid var(--sauce)}
+
+/* HEAD */
+.head{padding:160px 0 80px;text-align:center;position:relative;z-index:2}
+.head h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(56px,9vw,160px);line-height:.88;letter-spacing:-.025em;margin-top:24px}
+.head h1 .it{font-style:italic;color:var(--sauce)}
+.head .sub{font-family:'Fraunces',serif;font-size:22px;color:var(--ink-2);max-width:660px;margin:24px auto 0;line-height:1.5}
+
+/* LOCATION CARDS */
+.locs{padding:60px 0 120px;position:relative;z-index:2}
+.locs-grid{display:flex;flex-direction:column;gap:80px}
+
+.loc{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:32px;
+  overflow:hidden;padding:0;position:relative;
+}
+.loc.alt{grid-template-columns:1fr 1.2fr}
+.loc.alt .loc-img{order:2}
+@media (max-width:960px){.loc,.loc.alt{grid-template-columns:1fr;gap:0}.loc.alt .loc-img{order:0}}
+
+.loc-img{aspect-ratio:5/4;overflow:hidden;position:relative}
+.loc-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.loc:hover .loc-img img{transform:scale(1.06)}
+.loc-tag{position:absolute;top:24px;left:24px;background:var(--paper);padding:8px 16px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.12em;font-size:12px;color:var(--ink);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.loc-tag.green{background:var(--halal);color:var(--paper)}
+.loc-tag.char{background:var(--char);color:var(--ink)}
+
+.loc-body{padding:60px 56px;display:flex;flex-direction:column;gap:18px}
+@media (max-width:680px){.loc-body{padding:40px 28px}}
+.loc-kind{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.14em;color:var(--char)}
+.loc-name{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,72px);line-height:.95;letter-spacing:-.02em;font-weight:600}
+.loc-name .it{font-style:italic;color:var(--sauce)}
+.loc-addr{font-family:'Fraunces',serif;font-size:18px;line-height:1.45;color:var(--ink-2)}
+.loc-meta{display:flex;gap:32px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:8px}
+.loc-meta-item{display:flex;flex-direction:column;gap:2px}
+.loc-meta-item .k{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--ink-2)}
+.loc-meta-item .v{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);font-weight:600}
+.loc-meta-item .v.dot::before{content:"●";color:#1f9b4e;margin-right:6px;font-size:12px}
+.loc-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:14px;transition:all .3s}
+.btn svg{width:14px;height:14px}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--sauce);transform:translateY(-1px)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+
+/* HOURS GRID */
+.hours-wrap{
+  margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;
+}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+@media (max-width:480px){.hours-grid{grid-template-columns:1fr}}
+.hr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.hr:last-child,.hr:nth-last-child(2){border-bottom:none}
+.hr .d{font-family:'Bebas Neue',sans-serif;letter-spacing:.08em;color:var(--ink-2);font-size:13px}
+.hr .t{color:var(--ink);font-weight:600}
+.hr.closed .t{color:var(--sauce);font-style:italic;font-weight:500}
+.hr.today{background:var(--paper-2);margin:-2px -10px;padding:8px 10px;border-radius:8px;border-bottom:none}
+
+/* MAP */
+.map-band{padding:100px 0;background:var(--ink);color:var(--paper);position:relative;overflow:hidden;z-index:2}
+.map-band::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 30% 50%,rgba(192,57,43,.15),transparent 60%)}
+.map-band .wrap{position:relative}
+.map-band h2{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,72px);line-height:.95;letter-spacing:-.02em}
+.map-band h2 .it{font-style:italic;color:var(--char)}
+.map-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;margin-top:48px}
+@media (max-width:900px){.map-grid{grid-template-columns:1fr}}
+.map-info p{font-family:'Fraunces',serif;font-size:18px;line-height:1.55;color:rgba(245,237,225,.85);margin-bottom:16px}
+.map-info .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(245,237,225,.08);padding:8px 14px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.08em;font-size:12px;color:var(--char);margin-right:8px;margin-top:8px}
+.map-frame{aspect-ratio:5/4;border-radius:20px;overflow:hidden;border:1px solid rgba(245,237,225,.15);background:#222;position:relative;display:grid;place-items:center}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.3) brightness(.85)}
+
+/* TRANSIT */
+.transit{padding:100px 0;position:relative;z-index:2}
+.transit-head{margin-bottom:48px}
+.transit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media (max-width:820px){.transit-grid{grid-template-columns:1fr}}
+.tr-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:18px;padding:32px;
+  display:flex;flex-direction:column;gap:14px;transition:transform .4s, border-color .4s;
+}
+.tr-card:hover{transform:translateY(-4px);border-color:var(--ink)}
+.tr-icon{width:48px;height:48px;border-radius:14px;background:var(--ink);color:var(--char);display:grid;place-items:center;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em}
+.tr-card.subway .tr-icon{background:#0039a6;color:#fff}
+.tr-card.bus .tr-icon{background:#005baa;color:#fff}
+.tr-card.car .tr-icon{background:var(--ink);color:var(--char)}
+.tr-card h3{font-family:'Fraunces',serif;font-size:22px;line-height:1.1;font-weight:600}
+.tr-card p{font-size:14px;line-height:1.5;color:var(--ink-2)}
+
+/* CTA BAND */
+.cta-band{background:var(--sauce);color:var(--paper);position:relative;overflow:hidden;padding:80px 0;z-index:2}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 90% 50%,rgba(184,132,54,.3),transparent)}
+.cta-band .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta-band h3{font-family:'Fraunces',serif;font-size:clamp(36px,4.5vw,64px);line-height:.95;letter-spacing:-.02em;max-width:680px}
+.cta-band h3 .it{font-style:italic}
+.cta-band .btn{background:var(--ink);color:var(--paper);font-size:16px;padding:18px 30px}
+.cta-band .btn:hover{background:var(--paper);color:var(--ink)}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--paper);padding:80px 0 36px;position:relative;z-index:2}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand{font-family:'Fraunces',serif;font-size:42px;line-height:.95;letter-spacing:-.02em;font-weight:600}
+.foot-brand .it{font-style:italic;color:var(--char)}
+.foot-brand small{display:block;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.12em;color:rgba(245,237,225,.6);margin-top:14px}
+.foot-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--char);margin-bottom:18px}
+.foot-h{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;margin-bottom:18px;color:var(--char)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{font-size:14px;color:rgba(245,237,225,.78);transition:color .25s}
+footer ul a:hover{color:var(--paper)}
+.foot-bottom{padding-top:28px;border-top:1px solid rgba(245,237,225,.12);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot-bottom small{font-size:12px;color:rgba(245,237,225,.5)}
+.foot-soc{display:flex;gap:10px}
+.foot-soc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,237,225,.2);display:grid;place-items:center;transition:all .3s}
+.foot-soc a:hover{background:var(--sauce);border-color:var(--sauce)}
+.foot-soc svg{width:16px;height:16px;color:var(--paper)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:translateY(0)}
+.stagger > *{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.stagger.in > *{opacity:1;transform:translateY(0)}
+.stagger.in > *:nth-child(2){transition-delay:.1s}
+.stagger.in > *:nth-child(3){transition-delay:.2s}
+.scroll-prog{position:fixed;top:0;left:0;height:3px;background:var(--sauce);width:0;z-index:60;transition:width .1s}
+</style>
+</head>
+<body>
+
+<div class="scroll-prog" id="prog"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand"><span class="brand-mark">H</span><span class="brand-text">THE HUB<small>The Halal Urban Bistro</small></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Story</a>
+      <a href="locations.html" class="active">Locations</a>
+      <a href="order.html" class="nav-cta">Order Online <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+  </div>
+</nav>
+
+<!-- HEAD -->
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow reveal">Find Us</span>
+    <h1 class="reveal">Two corners of <span class="it">New York.</span></h1>
+    <p class="sub reveal">The flagship is open six nights a week in Queens Village. The seasonal booth runs late November through Christmas Eve at Union Square Holiday Market.</p>
+  </div>
+</header>
+
+<!-- LOCATIONS -->
+<section class="locs">
+  <div class="wrap locs-grid">
+
+    <!-- HILLSIDE -->
+    <article class="loc reveal" id="hillside">
+      <div class="loc-img">
+        <span class="loc-tag green">Flagship · Open Now</span>
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1100&q=85" alt="Hillside Ave storefront"/>
+      </div>
+      <div class="loc-body">
+        <span class="loc-kind">Location 01</span>
+        <h2 class="loc-name">The Hillside <span class="it">Flagship.</span></h2>
+        <p class="loc-addr">235-20 Hillside Ave<br>Queens Village, NY 11427</p>
+
+        <div class="loc-meta">
+          <div class="loc-meta-item"><span class="k">PHONE</span><span class="v">(917) 332-7100</span></div>
+          <div class="loc-meta-item"><span class="k">STATUS</span><span class="v dot">Open · til 2am</span></div>
+          <div class="loc-meta-item"><span class="k">SEATING</span><span class="v">28 inside · 12 patio</span></div>
+        </div>
+
+        <div class="hours-wrap">
+          <div class="hours-grid">
+            <div class="hr closed"><span class="d">MONDAY</span><span class="t">Closed</span></div>
+            <div class="hr"><span class="d">FRIDAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+            <div class="hr"><span class="d">TUESDAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+            <div class="hr"><span class="d">SATURDAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+            <div class="hr"><span class="d">WEDNESDAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+            <div class="hr"><span class="d">SUNDAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+            <div class="hr today"><span class="d">THURSDAY · TODAY</span><span class="t">5:00 PM – 2:00 AM</span></div>
+          </div>
+        </div>
+
+        <div class="loc-cta">
+          <a href="https://www.google.com/maps/place/235-20+Hillside+Ave,+Queens+Village,+NY+11427" target="_blank" rel="noopener" class="btn btn-primary">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="tel:+19173327100" class="btn btn-line">Call</a>
+          <a href="order.html" class="btn btn-line">Order pickup</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- UNION SQUARE -->
+    <article class="loc alt reveal" id="union-sq">
+      <div class="loc-img">
+        <span class="loc-tag char">Seasonal · Nov–Dec</span>
+        <img src="https://images.unsplash.com/photo-1513875528452-d4194b03133f?auto=format&fit=crop&w=1100&q=85" alt="Union Square Holiday Market"/>
+      </div>
+      <div class="loc-body">
+        <span class="loc-kind">Location 02</span>
+        <h2 class="loc-name">Union Square <span class="it">Holiday Market.</span></h2>
+        <p class="loc-addr">Union Square Park · West Plaza<br>14th St &amp; Broadway, Manhattan</p>
+
+        <div class="loc-meta">
+          <div class="loc-meta-item"><span class="k">SEASON</span><span class="v">Nov 22 – Dec 24, 2026</span></div>
+          <div class="loc-meta-item"><span class="k">BOOTH</span><span class="v">W14 · West Plaza</span></div>
+          <div class="loc-meta-item"><span class="k">CASH/CARD</span><span class="v">Card preferred</span></div>
+        </div>
+
+        <div class="hours-wrap">
+          <div class="hours-grid">
+            <div class="hr"><span class="d">MON – FRI</span><span class="t">11:00 AM – 8:00 PM</span></div>
+            <div class="hr"><span class="d">SATURDAY</span><span class="t">10:00 AM – 9:00 PM</span></div>
+            <div class="hr"><span class="d">SUNDAY</span><span class="t">10:00 AM – 7:00 PM</span></div>
+            <div class="hr closed"><span class="d">THANKSGIVING</span><span class="t">Closed</span></div>
+            <div class="hr"><span class="d">CHRISTMAS EVE</span><span class="t">10:00 AM – 4:00 PM</span></div>
+            <div class="hr closed"><span class="d">CHRISTMAS DAY</span><span class="t">Market closed</span></div>
+          </div>
+        </div>
+
+        <div class="loc-cta">
+          <a href="https://www.google.com/maps/search/Union+Square+Holiday+Market+NYC" target="_blank" rel="noopener" class="btn btn-primary">Find the booth <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="https://instagram.com/thehalalurbanbistro" target="_blank" rel="noopener" class="btn btn-line">Daily updates on IG</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- MAP BAND -->
+<section class="map-band">
+  <div class="wrap">
+    <div class="map-grid">
+      <div class="map-info">
+        <span class="eyebrow" style="color:var(--char);border-color:var(--char)">Hillside Flagship</span>
+        <h2 style="margin-top:18px">Easy to find. <span class="it">Easier to smell.</span></h2>
+        <p>The flagship sits between 235th and 236th on Hillside Ave, across from the corner deli, two blocks east of the LIRR station. Look for the red awning and the line.</p>
+        <p>Park on Hillside (two-hour metered, free after 7pm) or take a Lyft — the patio is the easy meeting point.</p>
+        <div>
+          <span class="pill">★ 4.9 Google</span>
+          <span class="pill">Halal · Zabiha</span>
+          <span class="pill">Outdoor seating</span>
+          <span class="pill">Open late</span>
+          <span class="pill">Family friendly</span>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=235-20+Hillside+Ave+Queens+Village+NY&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="THE HUB Hillside Map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSIT -->
+<section class="transit">
+  <div class="wrap">
+    <div class="transit-head reveal">
+      <span class="eyebrow">Getting Here</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(36px,4.5vw,64px);line-height:.95;letter-spacing:-.02em;margin-top:18px">From <span style="font-style:italic;color:var(--sauce)">anywhere</span> in NY.</h2>
+    </div>
+
+    <div class="transit-grid stagger">
+      <article class="tr-card subway">
+        <span class="tr-icon">F</span>
+        <h3>By subway</h3>
+        <p>Take the F train to 169th St / Hillside Ave, then the Q43 bus eastbound 8 stops to 233rd St. About 35 minutes from Midtown.</p>
+      </article>
+      <article class="tr-card bus">
+        <span class="tr-icon">Q43</span>
+        <h3>By bus</h3>
+        <p>The Q43, Q83, and Q1 all stop within a block. Q43 is the fastest from western Queens — 25 minutes from Jamaica Center.</p>
+      </article>
+      <article class="tr-card car">
+        <span class="tr-icon">CAR</span>
+        <h3>By car</h3>
+        <p>Take Grand Central Pkwy exit 23 to Cross Island Pkwy south to Hillside Ave exit. Street parking on Hillside is metered until 7pm — free after.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+    <h3>Driving in? <span class="it">Order ahead.</span></h3>
+    <a href="order.html" class="btn">Order pickup <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-tag">The Halal Urban Bistro</span>
+        <div class="foot-brand">THE <span class="it">HUB.</span><small>Queens, NY · Est. 2023</small></div>
+      </div>
+      <div><h4 class="foot-h">Visit</h4><ul><li>235-20 Hillside Ave</li><li>Queens Village, NY 11427</li><li><a href="tel:+19173327100">(917) 332-7100</a></li><li><a href="mailto:hello@thehub.nyc">hello@thehub.nyc</a></li></ul></div>
+      <div><h4 class="foot-h">Hours</h4><ul><li>Mon — Closed</li><li>Tue – Sun — 5pm to 2am</li><li>Ramadan — extended</li></ul></div>
+      <div><h4 class="foot-h">Explore</h4><ul><li><a href="menu.html">Full Menu</a></li><li><a href="story.html">Our Story</a></li><li><a href="locations.html">Locations</a></li><li><a href="order.html">Order Online</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <small>© 2026 The Halal Urban Bistro. All rights reserved. Zabiha halal certified.</small>
+      <div class="foot-soc">
+        <a href="https://instagram.com/thehalalurbanbistro" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://google.com/maps" aria-label="Maps" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+  const sc=document.documentElement,max=sc.scrollHeight-sc.clientHeight;
+  document.getElementById('prog').style.width=(window.scrollY/max*100)+'%';
+});
+document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

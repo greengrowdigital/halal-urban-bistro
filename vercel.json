@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/story", "destination": "/story.html" },
+    { "source": "/locations", "destination": "/locations.html" },
+    { "source": "/order", "destination": "/order.html" }
+  ]
+}

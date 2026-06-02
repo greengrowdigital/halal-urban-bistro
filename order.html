@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Order Online — THE HUB</title>
+<meta name="description" content="Order smash burgers, chopped cheese, Maple Smash, loaded fries and more from THE HUB. Pickup at the Queens Village flagship in about 15 minutes."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..150,0..1&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314110d'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='central' font-family='Bebas Neue, Impact, sans-serif' font-size='34' fill='%23c0392b' font-weight='700'%3EH%3C/text%3E%3C/svg%3E"/>
+<style>
+:root{--paper:#f5ede1;--paper-2:#ece2d2;--ink:#14110d;--ink-2:#3a322a;--sauce:#c0392b;--char:#b88436;--halal:#2d5a3d;--line:rgba(20,17,13,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:radial-gradient(1200px 600px at 12% -10%,rgba(192,57,43,.08),transparent 60%),radial-gradient(900px 500px at 92% 110%,rgba(184,132,54,.12),transparent 60%),var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:1380px;margin:0 auto;padding:0 36px}
+@media (max-width:680px){.wrap{padding:0 22px}}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;backdrop-filter:blur(12px);background:rgba(245,237,225,.78);border-bottom:1px solid var(--line);transition:padding .3s}
+.nav.scrolled{padding:12px 0;background:rgba(245,237,225,.94)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Bebas Neue',sans-serif;letter-spacing:.08em;font-size:24px}
+.brand-mark{width:38px;height:38px;border-radius:8px;background:var(--ink);display:grid;place-items:center;color:var(--sauce);font-size:22px;position:relative;overflow:hidden}
+.brand-mark::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(184,132,54,.4))}
+.brand-text{display:flex;flex-direction:column;line-height:.9}
+.brand-text small{font-family:'Fraunces',serif;font-size:10px;font-style:italic;letter-spacing:.04em;color:var(--ink-2);text-transform:none}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.nav-links a{position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.nav-cta:hover{background:var(--sauce);transform:translateY(-1px)}
+.nav-cta::after{display:none !important}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(245,237,225,.8);align-items:center;justify-content:center}
+.nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:var(--ink)}
+.nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
+@media (max-width:920px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);padding:24px;gap:20px;align-items:flex-start;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-toggle{display:inline-flex}}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.18em;color:var(--sauce);padding:6px 0;border-top:1px solid var(--sauce);border-bottom:1px solid var(--sauce)}
+
+/* HEAD */
+.head{padding:140px 0 24px;position:relative;z-index:2}
+.head .row{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.head h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(48px,7vw,108px);line-height:.88;letter-spacing:-.025em;margin-top:18px}
+.head h1 .it{font-style:italic;color:var(--sauce)}
+
+/* MODE TOGGLE */
+.mode-toggle{display:flex;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:5px;position:relative;align-self:flex-start}
+.mode-toggle button{padding:10px 20px;border-radius:999px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:13px;color:var(--ink-2);transition:color .3s;position:relative;z-index:2}
+.mode-toggle button.active{color:var(--paper)}
+.mode-toggle::before{content:"";position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);background:var(--ink);border-radius:999px;transition:transform .3s cubic-bezier(.2,.7,.2,1);z-index:1}
+.mode-toggle.delivery::before{transform:translateX(100%)}
+.mode-toggle.delivery + .delivery-note{display:block}
+.delivery-note{display:none;font-size:13px;color:var(--ink-2);font-style:italic;margin-top:10px}
+
+/* MAIN ORDER LAYOUT */
+.order-main{padding:48px 0 120px;position:relative;z-index:2}
+.order-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:50px;align-items:start}
+@media (max-width:1024px){.order-grid{grid-template-columns:1fr}}
+
+/* MENU PICKER */
+.cat-pills{display:flex;gap:8px;overflow-x:auto;margin-bottom:28px;padding:0 2px;scrollbar-width:none}
+.cat-pills::-webkit-scrollbar{display:none}
+.cat-pills button{flex-shrink:0;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:13px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2);transition:all .3s}
+.cat-pills button:hover{border-color:var(--ink);color:var(--ink)}
+.cat-pills button.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.menu-block{display:none}
+.menu-block.show{display:block;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.menu-block h3{font-family:'Fraunces',serif;font-size:34px;line-height:1;letter-spacing:-.02em;margin-bottom:24px;font-weight:600}
+.menu-block h3 .it{font-style:italic;color:var(--sauce)}
+
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:680px){.picks{grid-template-columns:1fr}}
+
+.pick{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:18px;
+  padding:18px;display:flex;gap:16px;align-items:center;cursor:pointer;
+  transition:transform .3s, border-color .3s, box-shadow .3s;
+}
+.pick:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 14px 30px -10px rgba(20,17,13,.18)}
+.pick-img{width:80px;height:80px;border-radius:14px;overflow:hidden;flex-shrink:0;background:var(--paper)}
+.pick-img img{width:100%;height:100%;object-fit:cover}
+.pick-info{flex:1;display:flex;flex-direction:column;gap:4px}
+.pick-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.1}
+.pick-desc{font-size:12px;color:var(--ink-2);line-height:1.4}
+.pick-foot{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.pick-price{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.04em}
+.pick-add{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;transition:all .25s}
+.pick:hover .pick-add{background:var(--sauce);transform:scale(1.1)}
+.pick-add svg{width:14px;height:14px}
+
+/* CART SIDEBAR */
+.cart-side{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:24px;padding:32px;
+  position:sticky;top:100px;
+}
+.cart-side h2{font-family:'Fraunces',serif;font-size:30px;line-height:1;letter-spacing:-.02em;margin-bottom:8px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.cart-side h2 .count{background:var(--sauce);color:var(--paper);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0}
+.cart-side .pickup{font-size:13px;color:var(--ink-2);font-style:italic;margin-bottom:20px}
+
+.cart-list{display:flex;flex-direction:column;gap:14px;max-height:340px;overflow-y:auto;padding-right:6px;margin-bottom:18px;border-top:1px solid var(--line);padding-top:18px}
+.cart-list::-webkit-scrollbar{width:5px}
+.cart-list::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+.cart-empty{padding:32px 16px;text-align:center;color:var(--ink-2);font-family:'Fraunces',serif;font-style:italic;font-size:16px}
+
+.ci{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.ci:last-child{border-bottom:none}
+.ci-name{font-size:14px;font-weight:500;line-height:1.2}
+.ci-name small{display:block;font-size:11px;color:var(--ink-2);font-weight:400;margin-top:2px}
+.ci-qty{display:flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px}
+.ci-qty button{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);font-size:14px;transition:background .25s}
+.ci-qty button:hover{background:var(--line)}
+.ci-qty .q{font-family:'Bebas Neue',sans-serif;font-size:13px;min-width:18px;text-align:center}
+.ci-price{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.04em;min-width:48px;text-align:right}
+
+.totals{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:18px;font-size:14px}
+.tot-row{display:flex;justify-content:space-between}
+.tot-row.grand{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;padding-top:8px;border-top:1px solid var(--line);margin-top:6px}
+.tot-row.grand span:last-child{color:var(--sauce)}
+
+.checkout-btn{
+  width:100%;margin-top:22px;padding:18px;background:var(--ink);color:var(--paper);
+  border-radius:14px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:16px;
+  display:flex;align-items:center;justify-content:center;gap:10px;transition:background .3s;
+}
+.checkout-btn:hover:not(:disabled){background:var(--sauce)}
+.checkout-btn:disabled{opacity:.5;cursor:not-allowed}
+.checkout-btn svg{width:16px;height:16px}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(20,17,13,.7);z-index:100;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(6px)}
+.modal-bg.show{display:flex;animation:fadeBg .35s}
+@keyframes fadeBg{from{opacity:0}to{opacity:1}}
+.modal{background:var(--paper);border-radius:24px;padding:48px;max-width:520px;width:100%;position:relative;animation:popIn .45s cubic-bezier(.2,.7,.2,1);max-height:90vh;overflow-y:auto}
+@keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;transition:background .25s}
+.modal-close:hover{background:var(--line)}
+.modal-close::before,.modal-close::after{content:"";position:absolute;width:14px;height:1.5px;background:var(--ink)}
+.modal-close::before{transform:rotate(45deg)}.modal-close::after{transform:rotate(-45deg)}
+.modal h2{font-family:'Fraunces',serif;font-size:36px;line-height:1.05;letter-spacing:-.02em;font-weight:600;margin-bottom:8px}
+.modal h2 .it{font-style:italic;color:var(--sauce)}
+.modal p.lead{font-family:'Fraunces',serif;font-size:17px;color:var(--ink-2);line-height:1.45;margin-bottom:24px}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.12em;color:var(--ink-2)}
+.form-field input,.form-field select,.form-field textarea{
+  font-family:inherit;font-size:14px;padding:13px 14px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:10px;color:var(--ink);transition:border-color .25s;
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--ink)}
+
+.modal-cta{margin-top:24px;display:flex;gap:12px}
+.modal-cta .btn-primary{flex:1;padding:16px;background:var(--ink);color:var(--paper);border-radius:12px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .3s}
+.modal-cta .btn-primary:hover{background:var(--sauce)}
+.modal-cta .btn-line{padding:16px 22px;border:1.5px solid var(--ink);border-radius:12px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:15px}
+.modal-cta .btn-line:hover{background:var(--ink);color:var(--paper)}
+
+.confirm-icon{width:80px;height:80px;border-radius:50%;background:var(--halal);color:var(--paper);display:grid;place-items:center;margin:0 auto 24px;animation:popBounce .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes popBounce{0%{transform:scale(0)}60%{transform:scale(1.1)}100%{transform:scale(1)}}
+.confirm-icon svg{width:38px;height:38px}
+.confirm-eta{background:var(--paper-2);border-radius:14px;padding:18px;margin-top:20px;display:flex;justify-content:space-between;align-items:center}
+.confirm-eta .l{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--ink-2)}
+.confirm-eta .v{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--ink)}
+.confirm-eta .v .it{font-style:italic;color:var(--sauce)}
+.confirm-order-num{margin-top:16px;font-family:'Bebas Neue',sans-serif;letter-spacing:.14em;font-size:14px;color:var(--char);text-align:center}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--paper);padding:80px 0 36px;position:relative;z-index:2}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand{font-family:'Fraunces',serif;font-size:42px;line-height:.95;letter-spacing:-.02em;font-weight:600}
+.foot-brand .it{font-style:italic;color:var(--char)}
+.foot-brand small{display:block;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.12em;color:rgba(245,237,225,.6);margin-top:14px}
+.foot-tag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--char);margin-bottom:18px}
+.foot-h{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.14em;margin-bottom:18px;color:var(--char)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{font-size:14px;color:rgba(245,237,225,.78);transition:color .25s}
+footer ul a:hover{color:var(--paper)}
+.foot-bottom{padding-top:28px;border-top:1px solid rgba(245,237,225,.12);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot-bottom small{font-size:12px;color:rgba(245,237,225,.5)}
+.foot-soc{display:flex;gap:10px}
+.foot-soc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,237,225,.2);display:grid;place-items:center;transition:all .3s}
+.foot-soc a:hover{background:var(--sauce);border-color:var(--sauce)}
+.foot-soc svg{width:16px;height:16px;color:var(--paper)}
+
+.scroll-prog{position:fixed;top:0;left:0;height:3px;background:var(--sauce);width:0;z-index:60;transition:width .1s}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="scroll-prog" id="prog"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand"><span class="brand-mark">H</span><span class="brand-text">THE HUB<small>The Halal Urban Bistro</small></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Story</a>
+      <a href="locations.html">Locations</a>
+      <a href="order.html" class="nav-cta active">Order Online <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+  </div>
+</nav>
+
+<!-- HEAD -->
+<header class="head">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <span class="eyebrow reveal">Order Online</span>
+        <h1 class="reveal">Pickup ready in <span class="it">~15 min.</span></h1>
+      </div>
+      <div>
+        <div class="mode-toggle reveal" id="mode">
+          <button class="active" data-mode="pickup">PICKUP</button>
+          <button data-mode="delivery">DELIVERY</button>
+        </div>
+        <p class="delivery-note">Delivery via DoorDash · 2.5mi radius · $3 fee</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<section class="order-main">
+  <div class="wrap order-grid">
+
+    <!-- LEFT: MENU PICKER -->
+    <div>
+      <div class="cat-pills" id="catPills">
+        <button class="active" data-cat="burgers">BURGERS</button>
+        <button data-cat="breakfast">BREAKFAST</button>
+        <button data-cat="sides">SIDES</button>
+        <button data-cat="drinks">DRINKS</button>
+        <button data-cat="sweets">SWEETS</button>
+      </div>
+
+      <!-- BURGERS -->
+      <div class="menu-block show" data-block="burgers">
+        <h3>Smash <span class="it">Burgers</span></h3>
+        <div class="picks" id="grid-burgers"></div>
+      </div>
+      <div class="menu-block" data-block="breakfast">
+        <h3>Breakfast <span class="it">(all day)</span></h3>
+        <div class="picks" id="grid-breakfast"></div>
+      </div>
+      <div class="menu-block" data-block="sides">
+        <h3>Sides &amp; <span class="it">Loaded</span></h3>
+        <div class="picks" id="grid-sides"></div>
+      </div>
+      <div class="menu-block" data-block="drinks">
+        <h3>Drinks &amp; <span class="it">Chai</span></h3>
+        <div class="picks" id="grid-drinks"></div>
+      </div>
+      <div class="menu-block" data-block="sweets">
+        <h3>Stuffed <span class="it">Cookies</span></h3>
+        <div class="picks" id="grid-sweets"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CART -->
+    <aside class="cart-side">
+      <h2>Your Order <span class="count" id="cartCount">0</span></h2>
+      <p class="pickup" id="pickupInfo">📍 Pickup · 235-20 Hillside Ave · ~15 min</p>
+
+      <div class="cart-list" id="cartList">
+        <div class="cart-empty">No items yet. Start with a smash burger.</div>
+      </div>
+
+      <div class="totals">
+        <div class="tot-row"><span>Subtotal</span><span id="subt">$0.00</span></div>
+        <div class="tot-row"><span>Tax (8.875%)</span><span id="tax">$0.00</span></div>
+        <div class="tot-row" id="feeRow" style="display:none"><span>Delivery fee</span><span>$3.00</span></div>
+        <div class="tot-row grand"><span>Total</span><span id="grand">$0.00</span></div>
+      </div>
+
+      <button class="checkout-btn" id="checkout" disabled>
+        Checkout
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </aside>
+  </div>
+</section>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" id="modalClose" aria-label="Close"></button>
+
+    <div id="checkoutForm">
+      <h2>Almost <span class="it">there.</span></h2>
+      <p class="lead">Tell us who's picking up and when. We'll start smashing as soon as you confirm.</p>
+
+      <div class="form-grid">
+        <div class="form-field"><label>First name</label><input type="text" id="fName" placeholder="Yasmin" required/></div>
+        <div class="form-field"><label>Last name</label><input type="text" id="lName" placeholder="Khan" required/></div>
+        <div class="form-field full"><label>Phone</label><input type="tel" id="phone" placeholder="(347) 555-0199" required/></div>
+        <div class="form-field"><label>Pickup time</label>
+          <select id="pTime">
+            <option>As soon as possible</option>
+            <option>In 20 minutes</option>
+            <option>In 30 minutes</option>
+            <option>In 1 hour</option>
+            <option>Schedule for later</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Payment</label>
+          <select id="payment">
+            <option>Apple Pay</option>
+            <option>Card on file</option>
+            <option>Pay at pickup</option>
+          </select>
+        </div>
+        <div class="form-field full"><label>Notes (optional)</label><textarea id="notes" rows="2" placeholder="Extra THE HUB sauce, no onions, etc."></textarea></div>
+      </div>
+
+      <div class="modal-cta">
+        <button class="btn-line" id="modalBack">Back</button>
+        <button class="btn-primary" id="placeBtn">Place order <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></button>
+      </div>
+    </div>
+
+    <div id="confirmView" style="display:none;text-align:center">
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h2 style="text-align:center">Order <span class="it">confirmed.</span></h2>
+      <p class="lead" style="text-align:center" id="confirmMsg">Thanks Yasmin — your order is being smashed as we speak.</p>
+      <div class="confirm-eta">
+        <div><div class="l">ETA</div><div class="v"><span id="etaTime">15 min</span> · <span class="it">Pickup</span></div></div>
+        <div><div class="l">TOTAL</div><div class="v" id="confirmTotal">$0.00</div></div>
+      </div>
+      <div class="confirm-order-num" id="orderNum">ORDER · HUB-0000</div>
+      <p style="margin-top:24px;font-size:13px;color:var(--ink-2);font-style:italic">A demo order. No real charge. No real cooking. (Sadly.)</p>
+      <button class="btn-line" id="closeConfirm" style="margin-top:20px;padding:14px 28px;border:1.5px solid var(--ink);border-radius:12px;font-family:'Bebas Neue',sans-serif;letter-spacing:.1em;font-size:15px">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-tag">The Halal Urban Bistro</span>
+        <div class="foot-brand">THE <span class="it">HUB.</span><small>Queens, NY · Est. 2023</small></div>
+      </div>
+      <div><h4 class="foot-h">Visit</h4><ul><li>235-20 Hillside Ave</li><li>Queens Village, NY 11427</li><li><a href="tel:+19173327100">(917) 332-7100</a></li><li><a href="mailto:hello@thehub.nyc">hello@thehub.nyc</a></li></ul></div>
+      <div><h4 class="foot-h">Hours</h4><ul><li>Mon — Closed</li><li>Tue – Sun — 5pm to 2am</li><li>Ramadan — extended</li></ul></div>
+      <div><h4 class="foot-h">Explore</h4><ul><li><a href="menu.html">Full Menu</a></li><li><a href="story.html">Our Story</a></li><li><a href="locations.html">Locations</a></li><li><a href="order.html">Order Online</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <small>© 2026 The Halal Urban Bistro. All rights reserved. Zabiha halal certified.</small>
+      <div class="foot-soc">
+        <a href="https://instagram.com/thehalalurbanbistro" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://google.com/maps" aria-label="Maps" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ==================== NAV ====================
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+  const sc=document.documentElement,max=sc.scrollHeight-sc.clientHeight;
+  document.getElementById('prog').style.width=(window.scrollY/max*100)+'%';
+});
+document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ==================== MENU DATA ====================
+const MENU={
+  burgers:[
+    {id:'smash',name:'Smashed Burger',desc:'Premium beef or chicken, melted cheese, grilled onions, THE HUB sauce.',price:10,img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80'},
+    {id:'maple',name:'Smashed Maple',desc:'Smashed patty, egg, melted cheese, organic maple syrup. On croissant.',price:12,img:'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=300&q=80'},
+    {id:'lacha',name:'Viral Lacha Paratha Burger',desc:'Premium smashed beef in a homemade lacha paratha bun.',price:13,img:'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=300&q=80'},
+    {id:'cc',name:'Chopped Cheese',desc:'Bodega classic, premium beef or chicken, melted cheese, hero.',price:12,img:'https://images.unsplash.com/photo-1572448862527-d3c904757de6?auto=format&fit=crop&w=300&q=80'},
+    {id:'stack',name:'THE HUB Stack',desc:'Smashed pancake burger. Patty between two pancakes.',price:15,img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80'},
+    {id:'pesto',name:'Pesto Chicken Hero',desc:'Pesto-marinated chicken, mozzarella, romaine, pesto aioli.',price:14,img:'https://images.unsplash.com/photo-1606755456206-b25206cde27e?auto=format&fit=crop&w=300&q=80'}
+  ],
+  breakfast:[
+    {id:'og',name:'The OG',desc:'Egg + cheese on a croissant or bun, with THE HUB sauce.',price:8,img:'https://images.unsplash.com/photo-1565299543923-37dd37887442?auto=format&fit=crop&w=300&q=80'},
+    {id:'dadom',name:"Dad's Egg Omelette",desc:'Eggs, green peppers, onions, tomato, cheese, special blend.',price:11,img:'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=300&q=80'},
+    {id:'pancake',name:'Pancake Platter',desc:'Two pancakes, two fried eggs, beef or chicken sausage.',price:15,img:'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=300&q=80'},
+    {id:'tres',name:'Tres Leche Pancake',desc:'Buttermilk pancakes in tres leche milk + maple.',price:9,img:'https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?auto=format&fit=crop&w=300&q=80'},
+    {id:'burr',name:'Breakfast Burrito',desc:"Eggs, peppers, onions, beef bacon, chopped cheese, tots.",price:13,img:'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=300&q=80'},
+    {id:'mapegg',name:'Smashed Maple Egg Salad',desc:'Cold smash maple mix with infused HUB sauce on croissant.',price:12,img:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=300&q=80'}
+  ],
+  sides:[
+    {id:'lfries',name:'Loaded Fries',desc:'Hand-cut, chopped beef or chicken, cheese, onions, THE HUB sauce.',price:8,img:'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=300&q=80'},
+    {id:'mfries',name:'Smashd Maple Loaded Fries',desc:'Loaded fries with the Maple-infused mix.',price:11,img:'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=300&q=80'},
+    {id:'tots',name:'Maple Tater Tots',desc:'Crispy tots with the maple smash treatment.',price:11,img:'https://images.unsplash.com/photo-1597393922344-eb0e3a3d0b18?auto=format&fit=crop&w=300&q=80'},
+    {id:'fries',name:'Hand-Cut Fries',desc:'Twice fried, sea salt, the bones of the menu.',price:4,img:'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=300&q=80'}
+  ],
+  drinks:[
+    {id:'chai',name:'Karak Chai',desc:'Cardamom, ginger, evaporated milk. House recipe.',price:4,img:'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=300&q=80'},
+    {id:'choc',name:'Belgian Hot Chocolate',desc:'Real Belgian dark, steamed whole milk.',price:4,img:'https://images.unsplash.com/photo-1542990253-0b8be050c4a4?auto=format&fit=crop&w=300&q=80'},
+    {id:'lem',name:'Hub Lemonade',desc:'Fresh-squeezed, lightly sweet.',price:5,img:'https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=300&q=80'},
+    {id:'wat',name:'Bottled Water',desc:'Spring water, 16oz.',price:1,img:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80'}
+  ],
+  sweets:[
+    {id:'nut',name:'Double Choc-Nutella',desc:'Double chocolate cookie with Nutella core.',price:5,img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80'},
+    {id:'lot',name:'Lotus Biscoff',desc:'Brown butter dough, Lotus Biscoff stuffed center.',price:5,img:'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=300&q=80'},
+    {id:'salt',name:'Salted Caramel',desc:'Slow-cooked caramel center, flaky sea salt.',price:5,img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=300&q=80'},
+    {id:'rees',name:"Reese'z Cookie",desc:'Peanut butter cookie stuffed with PB cup.',price:5,img:'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=300&q=80'}
+  ]
+};
+
+// ==================== RENDER MENU ====================
+function renderGrids(){
+  Object.keys(MENU).forEach(cat=>{
+    const grid=document.getElementById('grid-'+cat);
+    if(!grid)return;
+    grid.innerHTML=MENU[cat].map(it=>`
+      <div class="pick" data-add="${it.id}">
+        <div class="pick-img"><img src="${it.img}" alt="${it.name}" loading="lazy"/></div>
+        <div class="pick-info">
+          <span class="pick-name">${it.name}</span>
+          <span class="pick-desc">${it.desc}</span>
+          <div class="pick-foot">
+            <span class="pick-price">$${it.price}</span>
+            <span class="pick-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  });
+  document.querySelectorAll('.pick').forEach(p=>{
+    p.addEventListener('click',()=>{
+      const id=p.dataset.add;
+      let item=null;
+      Object.values(MENU).forEach(cat=>cat.forEach(it=>{if(it.id===id)item=it}));
+      if(item)addToCart(item);
+    });
+  });
+}
+
+// ==================== CART (in-memory + persisted) ====================
+const CKEY='hub_cart';
+function getCart(){try{return JSON.parse(localStorage.getItem(CKEY))||[]}catch(e){return[]}}
+function setCart(c){localStorage.setItem(CKEY,JSON.stringify(c));render()}
+function addToCart(item){
+  const c=getCart();
+  const ex=c.find(i=>i.id===item.id);
+  if(ex)ex.qty++;else c.push({...item,qty:1});
+  setCart(c);
+  pulseCart();
+}
+function changeQty(id,d){
+  const c=getCart();
+  const i=c.findIndex(x=>x.id===id);
+  if(i<0)return;
+  c[i].qty+=d;
+  if(c[i].qty<=0)c.splice(i,1);
+  setCart(c);
+}
+function pulseCart(){
+  const el=document.querySelector('.cart-side');
+  el.animate([{transform:'scale(1)'},{transform:'scale(1.015)'},{transform:'scale(1)'}],{duration:280});
+}
+
+function render(){
+  const c=getCart();
+  const list=document.getElementById('cartList');
+  const count=c.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartCount').textContent=count;
+  if(!c.length){
+    list.innerHTML='<div class="cart-empty">No items yet. Start with a smash burger.</div>';
+  }else{
+    list.innerHTML=c.map(i=>`
+      <div class="ci">
+        <div class="ci-name">${i.name}<small>$${i.price.toFixed(2)} ea.</small></div>
+        <div class="ci-qty">
+          <button onclick="changeQty('${i.id}',-1)">−</button>
+          <span class="q">${i.qty}</span>
+          <button onclick="changeQty('${i.id}',1)">+</button>
+        </div>
+        <span class="ci-price">$${(i.price*i.qty).toFixed(2)}</span>
+      </div>
+    `).join('');
+  }
+  const sub=c.reduce((s,i)=>s+i.price*i.qty,0);
+  const tax=sub*0.08875;
+  const fee=document.getElementById('mode').classList.contains('delivery')?3:0;
+  document.getElementById('feeRow').style.display=fee?'flex':'none';
+  const tot=sub+tax+fee;
+  document.getElementById('subt').textContent='$'+sub.toFixed(2);
+  document.getElementById('tax').textContent='$'+tax.toFixed(2);
+  document.getElementById('grand').textContent='$'+tot.toFixed(2);
+  document.getElementById('checkout').disabled=count===0;
+}
+window.changeQty=changeQty;
+
+// ==================== CATEGORY PILLS ====================
+document.querySelectorAll('.cat-pills button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-pills button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.menu-block').forEach(m=>m.classList.remove('show'));
+    document.querySelector(`[data-block="${b.dataset.cat}"]`).classList.add('show');
+  });
+});
+
+// ==================== MODE TOGGLE ====================
+document.querySelectorAll('#mode button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#mode button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const m=document.getElementById('mode');
+    m.classList.toggle('delivery',b.dataset.mode==='delivery');
+    document.getElementById('pickupInfo').textContent=b.dataset.mode==='delivery'
+      ? '🛵 Delivery · Queens Village area · ~30 min'
+      : '📍 Pickup · 235-20 Hillside Ave · ~15 min';
+    render();
+  });
+});
+
+// ==================== CHECKOUT MODAL ====================
+const modalBg=document.getElementById('modalBg');
+function openModal(){
+  document.getElementById('checkoutForm').style.display='block';
+  document.getElementById('confirmView').style.display='none';
+  modalBg.classList.add('show');document.body.style.overflow='hidden';
+}
+function closeModal(){
+  modalBg.classList.remove('show');document.body.style.overflow='';
+}
+document.getElementById('checkout').addEventListener('click',openModal);
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('modalBack').addEventListener('click',closeModal);
+document.getElementById('closeConfirm').addEventListener('click',()=>{
+  closeModal();
+  setCart([]);
+});
+modalBg.addEventListener('click',e=>{if(e.target===modalBg)closeModal()});
+
+// Place order
+document.getElementById('placeBtn').addEventListener('click',()=>{
+  const fn=document.getElementById('fName').value.trim()||'Friend';
+  const total=document.getElementById('grand').textContent;
+  const orderNum='HUB-'+String(Math.floor(Math.random()*9000)+1000);
+  const eta=document.getElementById('mode').classList.contains('delivery')?'~30 min':'~15 min';
+  document.getElementById('confirmMsg').textContent=`Thanks ${fn} — your order is being smashed as we speak.`;
+  document.getElementById('confirmTotal').textContent=total;
+  document.getElementById('orderNum').textContent='ORDER · '+orderNum;
+  document.getElementById('etaTime').textContent=eta.replace('~','');
+  document.getElementById('checkoutForm').style.display='none';
+  document.getElementById('confirmView').style.display='block';
+});
+
+// ==================== INIT ====================
+renderGrids();
+render();
+</script>
+
+</body>
+</html>
