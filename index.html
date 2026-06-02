@@ -358,13 +358,6 @@ footer ul a:hover{color:var(--paper)}
 .stagger.in > *:nth-child(5){transition-delay:.4s}
 .stagger.in > *:nth-child(6){transition-delay:.5s}
 
-/* ============ PAGE LOADER ============ */
-.loader{position:fixed;inset:0;background:var(--ink);z-index:200;display:grid;place-items:center;transition:opacity .8s, visibility .8s;color:var(--paper)}
-.loader.gone{opacity:0;visibility:hidden}
-.loader-text{font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:18px;color:var(--sauce);position:relative;overflow:hidden}
-.loader-text::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;background:var(--sauce);width:100%;animation:loadBar 1.4s ease forwards}
-@keyframes loadBar{from{width:0}to{width:100%}}
-
 /* scroll progress */
 .scroll-prog{position:fixed;top:0;left:0;height:3px;background:var(--sauce);width:0;z-index:60;transition:width .1s}
 
@@ -379,8 +372,6 @@ footer ul a:hover{color:var(--paper)}
 </head>
 <body>
 
-<!-- LOADER -->
-<div class="loader" id="loader"><div class="loader-text">THE HUB · LOADING</div></div>
 <div class="scroll-prog" id="prog"></div>
 
 <!-- NAV -->
@@ -747,11 +738,6 @@ footer ul a:hover{color:var(--paper)}
 </footer>
 
 <script>
-// Loader
-window.addEventListener('load',()=>{
-  setTimeout(()=>document.getElementById('loader').classList.add('gone'),700);
-});
-
 // Nav scroll
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
